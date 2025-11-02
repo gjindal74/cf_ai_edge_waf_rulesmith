@@ -15,6 +15,9 @@ An AI-powered application that generates and deploys Cloudflare Web Application 
 - 📝 **Session Memory**: Maintains chat history and context using Workers KV
 - 🎨 **Modern UI**: Clean, responsive interface built with vanilla HTML/CSS/JavaScript
 
+<img width="1603" height="773" alt="image" src="https://github.com/user-attachments/assets/14bb793c-85c0-486d-bbf7-3c1db020c357" />
+
+
 ## Architecture
 
 - **Backend**: Cloudflare Worker handling API requests, Workers AI integration, and Cloudflare API calls
