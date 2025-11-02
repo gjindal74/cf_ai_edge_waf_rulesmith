@@ -1,3 +1,7 @@
+```bash
+Note: This project is made for Cloudflare's AI App assignment
+```
+
 # Edge WAF Rulesmith 🛡️
 
 An AI-powered application that generates and deploys Cloudflare Web Application Firewall (WAF) rules from natural language. Built entirely on Cloudflare's developer stack using Workers AI, Cloudflare Workers, and Cloudflare Pages.
