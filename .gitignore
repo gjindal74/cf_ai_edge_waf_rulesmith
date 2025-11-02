@@ -7,16 +7,13 @@ dist/
 .env.*
 .DS_Store
 
-# Secrets and personal configs
 wrangler.toml.local
 secrets.txt
 *.secret
 
-# Documentation (keep only README.md)
 *.md
 !README.md
 
-# Scripts and helpers
 check-worker.sh
 LOCAL_CONFIG.txt
 SETUP_NOTES.txt
