@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edge WAF Rulesmith - AI-Powered WAF Rule Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🛡️ Edge WAF Rulesmith</h1>
+            <p class="subtitle">Generate Cloudflare WAF rules using natural language</p>
+        </header>
+
+        <div class="main-content">
+            <div class="chat-container">
+                <div id="chatMessages" class="chat-messages"></div>
+                <div class="chat-input-container">
+                    <div class="input-wrapper">
+                        <input 
+                            type="text" 
+                            id="messageInput" 
+                            placeholder="Describe your security requirement (e.g., 'block SQL injections on /login endpoint')"
+                            autocomplete="off"
+                        >
+                        <button id="sendButton" class="send-button">Send</button>
+                    </div>
+                    <div class="example-prompts">
+                        <span class="example-label">Try:</span>
+                        <button class="example-btn" data-prompt="block SQL injections on /login endpoint">Block SQL injection</button>
+                        <button class="example-btn" data-prompt="allow traffic only from Canada for /admin route">Geo-restrict admin</button>
+                        <button class="example-btn" data-prompt="block requests with suspicious user agents">Block bad bots</button>
+                        <button class="example-btn" data-prompt="rate limit requests to /api endpoint">Rate limit API</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="rule-panel">
+                <h2>Generated Rule</h2>
+                <div id="rulePreview" class="rule-preview">
+                    <p class="placeholder">Generate a rule to see it here...</p>
+                </div>
+                <div id="ruleActions" class="rule-actions" style="display: none;">
+                    <div class="rule-details">
+                        <div class="detail-item">
+                            <label>Expression:</label>
+                            <textarea id="ruleExpression" class="rule-expression" readonly></textarea>
+                        </div>
+                        <div class="detail-item">
+                            <label>Action:</label>
+                            <select id="ruleAction">
+                                <option value="block">Block</option>
+                                <option value="challenge">Challenge</option>
+                                <option value="log">Log</option>
+                                <option value="allow">Allow</option>
+                            </select>
+                        </div>
+                        <div class="detail-item">
+                            <label>Description:</label>
+                            <input type="text" id="ruleDescription" placeholder="Rule description">
+                        </div>
+                        <div class="config-section">
+                            <label>
+                                <input type="checkbox" id="ruleEnabled" checked>
+                                Enable rule immediately
+                            </label>
+                        </div>
+                        <div class="config-section">
+                            <label>Zone ID:</label>
+                            <input type="text" id="zoneId" placeholder="Your Cloudflare Zone ID">
+                        </div>
+                    </div>
+                    <div class="action-buttons">
+                        <button id="previewButton" class="btn btn-secondary">Validate</button>
+                        <button id="applyButton" class="btn btn-primary">Apply Rule</button>
+                        <button id="copyButton" class="btn btn-secondary">Copy Expression</button>
+                    </div>
+                    <div id="ruleStatus" class="status-message"></div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>Powered by Cloudflare Workers AI • Built with Workers & Pages</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
+

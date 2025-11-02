@@ -1,0 +1,27 @@
+{
+  "name": "edge-waf-rulesmith",
+  "version": "1.0.0",
+  "description": "Cloudflare AI-powered WAF rule generator using natural language",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "npx wrangler dev --remote",
+    "dev:local": "npx wrangler dev",
+    "dev:frontend": "npx wrangler pages dev public --port 8788",
+    "deploy": "npx wrangler deploy",
+    "pages:dev": "npx wrangler pages dev public",
+    "pages:deploy": "npx wrangler pages deploy public"
+  },
+  "keywords": [
+    "cloudflare",
+    "waf",
+    "ai",
+    "workers",
+    "security"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20241106.0",
+    "wrangler": "^4.45.3"
+  }
+}

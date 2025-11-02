@@ -1,0 +1,25 @@
+name = "edge-waf-rulesmith"
+main = "src/index.js"
+compatibility_date = "2024-11-01"
+compatibility_flags = ["nodejs_compat"]
+
+# Workers AI binding
+# Note: Workers AI requires account-level access, ensure it's enabled in your Cloudflare dashboard
+[ai]
+binding = "AI"
+
+# Workers KV for session storage
+[[kv_namespaces]]
+binding = "SESSION_STORE"
+id = "your-kv-namespace-id-here"  # Replace with your production KV namespace ID
+preview_id = "your-kv-preview-id-here"  # Replace with your preview KV namespace ID
+
+# Environment variables (set via `wrangler secret put`)
+# CLOUDFLARE_API_TOKEN - Your Cloudflare API token
+# CLOUDFLARE_ACCOUNT_ID - Your Cloudflare Account ID
+# CLOUDFLARE_ZONE_ID - Your Cloudflare Zone ID (optional, can be set per request)
+
+[vars]
+# Available models: @cf/meta/llama-3-8b-instruct, @cf/meta/llama-3-70b-instruct, @cf/mistai/mistral-7b-instruct-v0.2
+AI_MODEL = "@cf/meta/llama-3-8b-instruct"
+
